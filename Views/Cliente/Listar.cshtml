@@ -1,0 +1,44 @@
+@using Estacionamento_MVC.Models;
+@{
+    Layout = "MasterPage";
+    ViewBag.Title = "Lista de Clientes";
+}
+<br>
+<div class="container">
+    <br>
+    <h2>@TempData["mensagem"]</h2>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Modelo do Carro</th>
+                <th>Marca do Carro</th>
+                <th>Placa</th>
+                <th>Data e Hora de entrada</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach(var item in ViewData["clientes"] as List<ClienteModel>)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Nome</td>
+                    <td>@item.Modelo</td>
+                    <td>@item.Marca</td>
+                    <td>@item.Placa</td>
+                    <td>@item.DataEntrada</td>
+                    <td>
+                        <a href="/Cliente/Editar?id=@item.Id" class="btn btn-outline-warning">Editar</a>
+                        <a href="#" class= "btn btn-outline-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
