@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\34132336883\\Documents\\senai\\Estacionamento MVC\\Estacionamento MVC.csproj",
+      "projectUniqueName": "c:\\Users\\34132336883\\Documents\\senai\\Projetos\\EstacionamentoMVC\\Estacionamento MVC.csproj",
       "projectName": "Estacionamento MVC",
-      "projectPath": "C:\\Users\\34132336883\\Documents\\senai\\Estacionamento MVC\\Estacionamento MVC.csproj",
+      "projectPath": "c:\\Users\\34132336883\\Documents\\senai\\Projetos\\EstacionamentoMVC\\Estacionamento MVC.csproj",
       "packagesPath": "C:\\Users\\34132336883\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\34132336883\\Documents\\senai\\Estacionamento MVC\\obj\\",
+      "outputPath": "c:\\Users\\34132336883\\Documents\\senai\\Projetos\\EstacionamentoMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

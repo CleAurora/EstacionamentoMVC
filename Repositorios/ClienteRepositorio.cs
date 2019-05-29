@@ -17,7 +17,7 @@ namespace Estacionamento_MVC.Repositorios
             cliente.DataEntrada = DateTime.Now;
 
             StreamWriter sw = new StreamWriter("clientes.csv", true);
-            sw.WriteLine($"{cliente.Id};{cliente.Nome};{cliente.Modelo};{cliente.Marca};{cliente.Placa};{cliente.DataEntrada}");
+            sw.WriteLine($"{cliente.Id};{cliente.Nome};{cliente.Marca};{cliente.Modelo};{cliente.Placa};{cliente.DataEntrada}");
             sw.Close();
 
             return cliente;
@@ -38,8 +38,8 @@ namespace Estacionamento_MVC.Repositorios
                 cliente =  new ClienteModel(
                     id: int.Parse(linha[0]),
                     nome: linha[1],
-                    modelo: linha[2],
-                    marca: linha[3],
+                    marca: linha[2],
+                    modelo: linha[3],
                     placa: linha[4],
                     dataEntrada: DateTime.Parse(linha[5])
                 );
@@ -60,6 +60,19 @@ namespace Estacionamento_MVC.Repositorios
             return null;
         }//fim buscar por id
 
+        public List<ClienteModel> BuscarPorData(DateTime dataEntrada){
+            List<ClienteModel> listaDeClientes = Listar();
+            List<ClienteModel> listaPorData = new List<ClienteModel>();
+            
+            foreach(var item in listaDeClientes)
+            {
+                if(dataEntrada.Equals(item.DataEntrada)){
+                    listaPorData.Add(item);
+                }
+            }
+            return listaPorData;
+        }//fim buscar por id
+
        
 
         public ClienteModel EditarCliente(ClienteModel cliente){
@@ -77,6 +90,12 @@ namespace Estacionamento_MVC.Repositorios
             }//fim for
             File.WriteAllLines("clientes.csv", linhas);
             return cliente;
-        }
-    }//fim editar
+        }//fim editar
+
+          
+
+
+    }
+
+
 }

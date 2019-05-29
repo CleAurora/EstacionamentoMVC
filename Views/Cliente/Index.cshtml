@@ -1,3 +1,4 @@
+@model EstacionamentoMVC.ViewModels.ClienteViewModel;
 @{
     Layout = "MasterPage";
     ViewBag.Title="Cadastro de Clientes";
@@ -11,10 +12,23 @@
             <input type="text" name="nome" class="form-control">
 
             <label for="modelo">Modelo:</label>
-            <input type="text" name="modelo" class="form-control">
+            <select name="modelo">
+                <option value="">Selecione</option>
+                @foreach (var item in Model.modelos)
+                {
+                    <option value="@item.Nome">@item.Nome</option>
+                }
+            </select>            
 
             <label for="marca">Marca:</label>
-            <input type="text" name="marca" class="form-control">
+            <select name="marca">
+                <option value="">Selecione</option>
+                @foreach(var item in Model.marcas){
+                    <option value="@item.Nome">@item.Nome</option>
+
+                }
+
+            </select>
 
             <label for="placa">Placa:</label>
             <input type="text" name="placa" class="form-control">

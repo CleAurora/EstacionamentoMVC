@@ -8,6 +8,12 @@
     <br>
     <h2>@TempData["mensagem"]</h2>
 
+    <form action="Cliente/Listar" method="POST">
+        <label for="listarData">Data:</label>
+        <input type="DateTime" name="data" class="form-control">
+        <input type="submit" value="Listar por Data" class="btn btn-secondary btn-lg btn-block">
+    </form>
+
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -40,5 +46,7 @@
         </tbody>
 
     </table>
+
+
 
 </div>
